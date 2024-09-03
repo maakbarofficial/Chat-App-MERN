@@ -5,7 +5,7 @@ import Spinner from "./Spinner";
 
 const Conversations = () => {
   const { loading, conversations } = useGetConversations();
-  console.log(conversations);
+  // console.log(conversations);
 
   return (
     <div className="space-y-2">
