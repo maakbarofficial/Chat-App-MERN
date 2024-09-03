@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cookieParser());
 
-app.get("/", (req, res) => {
+app.get("/health", (req, res) => {
   res.json("Chat App Backend Server is running");
 });
 

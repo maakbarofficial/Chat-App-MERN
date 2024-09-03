@@ -201,7 +201,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8000",
+					"raw": "http://localhost:8000/health",
 					"protocol": "http",
 					"host": [
 						"localhost"
