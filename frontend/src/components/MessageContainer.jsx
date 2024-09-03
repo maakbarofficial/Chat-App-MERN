@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Messages from "./Messages";
 import MessageInput from "./MessageInput";
+import useConversation from "../store/useConversation";
 
 const MessageContainer = () => {
-  const noChatSelected = true;
+  const { selectedConversation, setSelectedConversation } = useConversation();
+
+  useEffect(() => {
+    //cleanup function (unmount)
+    return () => setSelectedConversation(null);
+  }, []);
+
   return (
-    <div className="flex flex-col w-3/4 bg-gray-100 p-4">
-      {noChatSelected ? (
+    <div className="flex flex-col w-full md:w-3/4 bg-zinc-400 p-4">
+      {!selectedConversation ? (
         <NoChatSelected />
       ) : (
         <>
-          <div className="bg-zinc-600 text-white p-2 rounded-t-lg text-center">To: Dummy User</div>
+          <div className="bg-zinc-900 text-white p-2 font-bold text-lg rounded-t-lg text-center">{selectedConversation.fullName}</div>
           <Messages />
           <MessageInput />
         </>
