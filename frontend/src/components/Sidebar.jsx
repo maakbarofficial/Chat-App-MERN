@@ -10,8 +10,9 @@ const Sidebar = () => {
         <SearchInput />
         <Conversations />
       </div>
-
-      <Logout />
+      <div>
+        <Logout />
+      </div>
     </div>
   );
 };
